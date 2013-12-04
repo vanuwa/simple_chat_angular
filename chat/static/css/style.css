@@ -53,3 +53,11 @@
 .b-chat-room__message-item strong {
 	overflow: hidden;
 }
+
+.b-chat-room__user__last-messages-tooltip {
+	display: none;
+}
+
+.b-chat-room__user:hover .b-chat-room__user__last-messages-tooltip {
+	display: block;
+}

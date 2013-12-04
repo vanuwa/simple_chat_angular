@@ -55,7 +55,7 @@
 
 					/* assign messages to user */
 					_.forEach(results.users, function (item) {
-						item.messages = _.first(_.filter(results.messages, {"author": item.id}));
+						item.messages = _.first(_.filter(results.messages, {"author": item.id}), 3);
 					});
 
 					/* assign author to message */
@@ -122,6 +122,8 @@
 					'text-shadow': 'none'
 				}
 			});
+
+			/*$(".b-chat-room__messages li:last-child")[0].scrollIntoView();*/
 		};
 	});
 }());

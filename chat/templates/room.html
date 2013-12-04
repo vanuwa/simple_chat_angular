@@ -34,8 +34,11 @@
 						</div>
 					</div>
 					<ul class="span3 b-chat-room__users">
-						<li class="b-chat-room__user hastip" ng-repeat="item in users">
-							<strong title="<ul><li ng-repeat='msg in item.messages'><% msg %></li></ul"><% item.name %></strong>
+						<li class="b-chat-room__user" ng-repeat="item in users">
+							<strong><% item.name %></strong>
+							<ul class="b-chat-room__user__last-messages-tooltip">
+								<li ng-repeat="msg in item.messages"><% msg.text %></li>
+							</ul>
 						</li>
 					</ul>
 				</div>
