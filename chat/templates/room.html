@@ -37,7 +37,9 @@
 						<li class="b-chat-room__user" ng-repeat="item in users">
 							<strong><% item.name %></strong>
 							<ul class="b-chat-room__user__last-messages-tooltip">
-								<li ng-repeat="msg in item.messages"><% msg.text %></li>
+								<li ng-repeat="msg in item.messages">
+									<div class="badge"><% msg.text %></div>
+								</li>
 							</ul>
 						</li>
 					</ul>
