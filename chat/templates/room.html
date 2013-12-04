@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>Chat - Room {{room.name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/static/css/style.css' media="screen" />
+    <script src="/static/libs/jquery-1.10.2.js"></script>
+    <script src="/static/libs/tooltipsy.js"></script>
+    <script src="/static/libs/lodash.compat.js"></script>
+    <script src="/static/libs/async.js"></script>
+    <script src="/static/libs/angular.js"></script>
+    <script src="/static/libs/angular-cookies.js"></script>
+    <script src="/static/js/controllers.js"></script>
+</head>
+<body>
+	<div id="b-chat-room__content" ng-app="MyApp">
+		<div class="row-fluid">
+			<div class="offset2 span8">
+				<h1>Room {{room.name}}</h1>
+				<div class="row-fluid b-chat-room" ng-controller="ChatController" ng-init="letMeStart()" ng-cloak>
+					<div class="span9 b-chat-room__messages-container">
+						<ul class="b-chat-room__messages">
+							<li class="b-chat-room__message-item row-fluid" ng-repeat="item in messages">
+								<strong class="span1 text-right"><% item.author.name %>:</strong>
+								<span class="span11"><% item.text %></span>
+							</li>
+						</ul>
+						<div class="b-chat-room__enter-new-message">
+							<form ng-submit="createMessage()">
+								{% csrf_token %}
+								<input type="text" ng-model="text" name="message" class="span10 input-large" autofocus="autofocus" placeholder="Type message...">
+								<input ng-disable="text.length < 1" type="submit" class="span2 btn" value="Post">
+							</form>
+						</div>
+					</div>
+					<ul class="span3 b-chat-room__users">
+						<li class="b-chat-room__user hastip" ng-repeat="item in users">
+							<strong title="<ul><li ng-repeat='msg in item.messages'><% msg %></li></ul"><% item.name %></strong>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</body>
+</html>
