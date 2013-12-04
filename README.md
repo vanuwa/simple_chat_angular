@@ -1,2 +1,2 @@
-simple_chat_angulag
+simple_chat_angular
 ===================
