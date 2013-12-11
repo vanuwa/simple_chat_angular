@@ -20,9 +20,17 @@
 				<div class="row-fluid b-chat-room" ng-controller="ChatController" ng-init="letMeStart()" ng-cloak>
 					<div class="span9 b-chat-room__messages-container">
 						<ul class="b-chat-room__messages">
-							<li class="b-chat-room__message-item row-fluid" ng-repeat="item in messages">
-								<strong class="span1 text-right"><% item.author.name %>:</strong>
-								<span class="span11"><% item.text %></span>
+							<li class="b-chat-room__message-item" chat-message ng-repeat="item in messages">
+								<div class="row-fluid">
+									<strong class="span12 text-left"><% item.author.name %>:</strong>
+								</div>
+								<div class="row-fluid">
+									<div class="offset1 span11">
+										<div class="b-chat-room__message-item__text">
+											<span><% item.text %></span>
+										</div>
+									</div>
+								</div>
 							</li>
 						</ul>
 						<div class="b-chat-room__enter-new-message">

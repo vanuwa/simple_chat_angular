@@ -21,6 +21,14 @@
 			$http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
 		}]);
 
+	app.directive('chatMessage', function () {
+		return function (scope, element, attrs) {
+			scope.$watch('messages', function () {
+				element[0].scrollIntoView();
+			});
+		};
+	});
+
 	app.controller('ChatController', function ($scope, $http) {
 		var intervalId;
 		var requestUsers = function (callback) {

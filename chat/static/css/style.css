@@ -47,7 +47,19 @@
 }
 
 .b-chat-room__message-item {
-	border-radiis: 4px;
+	margin: 5px 0;
+	padding: 5px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+}
+
+.b-chat-room__message-item__text {
+	display: inline-block;
+	border-radius: 15px;
+	background-color: #eee;
+	padding: 5px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .b-chat-room__message-item strong {
