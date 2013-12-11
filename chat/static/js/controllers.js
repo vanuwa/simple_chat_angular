@@ -63,7 +63,7 @@
 
 					/* assign messages to user */
 					_.forEach(results.users, function (item) {
-						item.messages = _.first(_.filter(results.messages, {"author": item.id}), 3);
+						item.messages = _.last(_.filter(results.messages, {"author": item.id}), 3);
 					});
 
 					/* assign author to message */
@@ -116,7 +116,7 @@
 			$scope.getModels();
 			$scope.startMessageChecker();
 
-			$('.hastip').tooltipsy({
+			/*$('.hastip').tooltipsy({
 				offset: [-10, 0],
 				css: {
 					'padding': '10px',
@@ -129,7 +129,7 @@
 					'box-shadow': '0 0 10px rgba(0, 0, 0, .5)',
 					'text-shadow': 'none'
 				}
-			});
+			});*/
 
 			/*$(".b-chat-room__messages li:last-child")[0].scrollIntoView();*/
 		};
