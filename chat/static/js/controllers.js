@@ -115,23 +115,6 @@
 		$scope.letMeStart = function () {
 			$scope.getModels();
 			$scope.startMessageChecker();
-
-			/*$('.hastip').tooltipsy({
-				offset: [-10, 0],
-				css: {
-					'padding': '10px',
-					'max-width': '200px',
-					'color': '#303030',
-					'background-color': '#f5f5b5',
-					'border': '1px solid #deca7e',
-					'-moz-box-shadow': '0 0 10px rgba(0, 0, 0, .5)',
-					'-webkit-box-shadow': '0 0 10px rgba(0, 0, 0, .5)',
-					'box-shadow': '0 0 10px rgba(0, 0, 0, .5)',
-					'text-shadow': 'none'
-				}
-			});*/
-
-			/*$(".b-chat-room__messages li:last-child")[0].scrollIntoView();*/
 		};
 	});
 }());
