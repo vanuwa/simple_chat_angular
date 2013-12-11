@@ -31,6 +31,9 @@
 }
 
 .b-chat-room__enter-new-message form {
+	margin: 5px 0;
+}
+.b-chat-room__enter-new-message form.row-fluid .span12 {
 	margin: 0;
 }
 

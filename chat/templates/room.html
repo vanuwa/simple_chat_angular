@@ -34,10 +34,11 @@
 							</li>
 						</ul>
 						<div class="b-chat-room__enter-new-message">
-							<form ng-submit="createMessage()">
+							<form ng-submit="createMessage()" class="row-fluid">
 								{% csrf_token %}
-								<input type="text" ng-model="text" name="message" class="span10 input-large" autofocus="autofocus" placeholder="Type message...">
-								<input ng-disable="text.length < 1" type="submit" class="span2 btn" value="Post">
+								<div class="span12">
+									<input type="text" ng-model="text" name="message" class="span12 input-large" autofocus="autofocus" placeholder="Type a message..." title='Press "Enter" to send'>
+								</div>
 							</form>
 						</div>
 					</div>
